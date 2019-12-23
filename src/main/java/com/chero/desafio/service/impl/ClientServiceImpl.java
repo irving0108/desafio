@@ -44,7 +44,7 @@ public class ClientServiceImpl implements ClientService{
 		int sumaEdades = 0;
 		List<Client> listaClientes = clientDAO.findAll();
 		for (Client client : listaClientes) {
-			sumaEdades = sumaEdades + client.getAge();
+			sumaEdades = sumaEdades + client.getEdad();
 		}
 		return sumaEdades/listaClientes.size();
 	}
@@ -55,7 +55,7 @@ public class ClientServiceImpl implements ClientService{
 		int promedio = this.promedioEdadClientes();
 		List<Client> listaClientes = clientDAO.findAll();
 		for (Client client : listaClientes) {
-			int desviacion = Math.abs(client.getAge() - promedio);
+			int desviacion = Math.abs(client.getEdad() - promedio);
 			int desviacionCuadrado = (int) Math.pow((double)desviacion,2);
 			sumatoriaDesviaciones = sumatoriaDesviaciones + desviacionCuadrado;
 		}

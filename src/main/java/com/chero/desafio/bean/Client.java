@@ -22,15 +22,15 @@ public class Client implements Serializable{
 	private Long id;
 	@Size(min = 1, max = 64, message = "longitud maxima 64 caracteres")
 	@Column(nullable = false)
-	private String name;
+	private String nombre;
 	@Size(min = 1, max = 64, message = "longitud maxima 64 caracteres")
 	@Column(nullable = false)
-	private String surname;
+	private String apellido;
 	@Column(nullable = false)
-	private Integer age;
+	private Integer edad;
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	@Column(nullable = false)
-	private Date birthday;
+	private Date fechanacimiento;
 		
 	public Client() {
 		super();
@@ -41,36 +41,36 @@ public class Client implements Serializable{
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getNombre() {
+		return nombre;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
-	public String getSurname() {
-		return surname;
+	public String getApellido() {
+		return apellido;
 	}
-	public void setSurname(String surname) {
-		this.surname = surname;
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
 	}
-	public Integer getAge() {
-		return age;
+	public Integer getEdad() {
+		return edad;
 	}
-	public void setAge(Integer age) {
-		this.age = age;
+	public void setEdad(Integer edad) {
+		this.edad = edad;
 	}
-	public Date getBirthday() {
-		return birthday;
+	public Date getFechanacimiento() {
+		return fechanacimiento;
 	}
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
+	public void setFechanacimiento(Date fechanacimiento) {
+		this.fechanacimiento = fechanacimiento;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
 		return result;
 	}
 	@Override
@@ -87,16 +87,16 @@ public class Client implements Serializable{
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (name == null) {
-			if (other.name != null)
+		if (nombre == null) {
+			if (other.nombre != null)
 				return false;
-		} else if (!name.equals(other.name))
+		} else if (!nombre.equals(other.nombre))
 			return false;
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Client [id=" + id + ", name=" + name + ", surname=" + surname + ", age=" + age + ", birthday="
-				+ birthday + "]";
+		return "Client [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", fechaNacimiento="
+				+ fechanacimiento + "]";
 	}
 }
